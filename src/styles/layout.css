@@ -1,0 +1,258 @@
+.app-shell {
+  display: flex;
+  min-height: 100dvh;
+}
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 240px;
+  flex-shrink: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--sidebar);
+  border-inline-end: 1px solid var(--line);
+  padding: 34px 20px 22px;
+  overflow-y: auto;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 45px;
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 42px;
+  background: var(--green);
+  color: var(--surface);
+  border-radius: 9px 9px 9px 2px;
+}
+:root[data-theme='dark'] .brand-mark {
+  color: #193021;
+}
+.brand strong {
+  display: block;
+  font-size: 17px;
+  letter-spacing: -0.5px;
+}
+.brand div > span {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  color: var(--muted);
+}
+.nav-item {
+  width: 100%;
+  justify-content: flex-start;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--muted);
+  padding: 11px 13px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  gap: 13px;
+}
+.nav-item span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nav-item.active {
+  background: var(--green-soft);
+  color: var(--green);
+  font-weight: 650;
+}
+.nav-caption {
+  padding: 27px 13px 11px;
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  color: var(--muted);
+}
+.sidebar-projects {
+  border-top: 1px solid var(--line);
+  margin-top: 19px;
+  padding-top: 15px;
+}
+.sidebar-footer {
+  margin-top: auto;
+  padding: 35px 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.local-dot {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+.project-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 3px;
+  margin-inline: 5px;
+  flex-shrink: 0;
+}
+.workspace {
+  flex: 1;
+  min-width: 0;
+}
+.topbar {
+  min-height: 82px;
+  border-bottom: 1px solid var(--line);
+  padding: 18px 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  width: 390px;
+  max-width: 100%;
+}
+.search-box input {
+  border: 0 !important;
+  background: transparent !important;
+  padding-inline: 0 !important;
+  font-size: 13px;
+}
+kbd {
+  font-family: inherit;
+  font-size: 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+  white-space: nowrap;
+}
+.connection {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.connection i {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+.connection i.offline {
+  background: var(--amber);
+}
+.main-content {
+  padding: 44px clamp(24px, 5vw, 80px) 24px;
+  max-width: 1450px;
+  margin-inline: auto;
+}
+.main-content:focus {
+  outline: none;
+}
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1.7px;
+  margin-bottom: 11px;
+}
+.page-description {
+  color: var(--muted);
+  margin-top: 9px;
+  font-size: 13px;
+}
+.header-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.header-actions button {
+  font-size: 12px;
+}
+.workspace-footer {
+  color: var(--muted);
+  font-size: 11px;
+  margin-block: 45px 8px;
+  text-align: center;
+}
+.mobile-menu {
+  display: none;
+}
+.settings-view,
+.projects-view {
+  max-width: 800px;
+}
+.settings-view section {
+  padding: 24px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+.settings-view h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+.settings-view p {
+  max-width: 650px;
+  margin-bottom: 18px;
+}
+.settings-view .field-grid {
+  max-width: 500px;
+}
+.checkbox-label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+}
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.project-form {
+  display: flex;
+  gap: 14px;
+  align-items: end;
+  margin-block: 20px 30px;
+  flex-wrap: wrap;
+}
+.project-form .field:first-child {
+  flex: 1;
+  min-width: 160px;
+}
+.project-list {
+  padding: 0;
+  list-style: none;
+}
+.project-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+}
+.project-list .entry-title {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}

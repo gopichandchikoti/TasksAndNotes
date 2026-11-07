@@ -1,0 +1,230 @@
+:root {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #26392f;
+  background: #f7f6f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --canvas: #f7f6f2;
+  --surface: #fffefa;
+  --sidebar: #eeeee7;
+  --ink: #26392f;
+  --muted: #636f65;
+  --line: #dcded4;
+  --green: #1d5945;
+  --green-soft: #dce8dd;
+  --amber: #805510;
+  --error: #a22c29;
+  --focus: #976416;
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  --canvas: #19231e;
+  --surface: #202d25;
+  --sidebar: #152019;
+  --ink: #e4e9de;
+  --muted: #b2bcb0;
+  --line: #425147;
+  --green: #b6dfc1;
+  --green-soft: #304a39;
+  --amber: #ecc382;
+  --error: #ffb5a9;
+  --focus: #edc888;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.6;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 15px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 1.4;
+}
+button:hover {
+  border-color: var(--green);
+  background: var(--green-soft);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+button.primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--surface);
+}
+:root[data-theme='dark'] button.primary {
+  color: #172a1e;
+}
+button.primary:hover {
+  filter: brightness(0.94);
+}
+.icon-button {
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 6px;
+  border-color: transparent;
+  background: transparent;
+}
+.text-button {
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  padding-inline: 6px;
+}
+input:not([type='checkbox']):not([type='color']),
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  padding: 9px 12px;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--green);
+  flex-shrink: 0;
+}
+input[type='color'] {
+  width: 60px;
+  height: 42px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+textarea {
+  resize: vertical;
+}
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+h1,
+h2,
+p {
+  margin: 0;
+}
+h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 3vw, 42px);
+  font-weight: 400;
+  letter-spacing: -1.2px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+h2 {
+  font-size: 19px;
+  font-weight: 600;
+}
+svg {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+a {
+  color: var(--green);
+  text-underline-offset: 3px;
+}
+.small {
+  font-size: 12px;
+}
+.muted {
+  color: var(--muted);
+}
+.error {
+  color: var(--error);
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 16px;
+}
+.error button {
+  margin-inline-start: 12px;
+}
+.notice {
+  color: var(--green);
+  padding: 14px 0;
+}
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 20px;
+  background: var(--green-soft);
+  color: var(--ink);
+  font-size: 13px;
+}
+.banner.error {
+  border-radius: 0;
+  margin: 0;
+  color: var(--error);
+}
+.startup {
+  max-width: 620px;
+  margin: 15vh auto;
+  padding: 24px;
+}
+.startup p {
+  margin-block: 16px;
+}
+.skip-link {
+  position: fixed;
+  inset-block-start: -80px;
+  inset-inline-start: 16px;
+  padding: 10px;
+  background: var(--surface);
+  z-index: 100;
+}
+.skip-link:focus {
+  inset-block-start: 10px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  button {
+    transition:
+      background-color 130ms,
+      border-color 130ms;
+  }
+  .task-check {
+    transition: background-color 150ms;
+  }
+}
