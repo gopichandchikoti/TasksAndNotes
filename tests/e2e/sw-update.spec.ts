@@ -53,6 +53,25 @@ test.afterAll(async () => {
   await new Promise<void>((resolve) => server.close(() => resolve()));
 });
 
+test('service worker activation preserves caches outside the app namespace', async ({ page }) => {
+  await page.goto(`${origin}/icon.svg`);
+  const name = `another-app-precache-v1-${origin}/`;
+  await page.evaluate(async (cacheName) => {
+    const cache = await caches.open(cacheName);
+    await cache.put('/unrelated-record', new Response('keep this record'));
+  }, name);
+  await page.goto(origin);
+  await page.evaluate(() => navigator.serviceWorker.ready.then(() => true));
+  await page.reload();
+  const result = await page.evaluate(async (cacheName) => {
+    const names = await caches.keys();
+    const record = await (await caches.open(cacheName)).match('/unrelated-record');
+    return { names, text: await record?.text() };
+  }, name);
+  expect(result.text).toBe('keep this record');
+  expect(result.names.some((cacheName) => cacheName.startsWith('tasksandnotes-precache-'))).toBe(true);
+});
+
 test('a real service worker update waits for the user and preserves an open task draft', async ({ page }) => {
   await page.goto(origin);
   await page.evaluate(() => navigator.serviceWorker.ready.then(() => true));

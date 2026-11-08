@@ -24,7 +24,7 @@ Use HTTPS for remote hosting; loopback HTTP supports local service workers.
 
 ## Quick start
 
-Tested on Windows with Node **22.13.1**, npm **10.9.2**. Use Node 22.13+ or Node 24 LTS and npm.
+Tested on Windows with Node **22.23.4**, npm **10.9.2**. Use the maintained Node 22 security patch selected by `.nvmrc`, or a current patched Node 24 LTS release.
 
 ```powershell
 npm ci

@@ -46,8 +46,11 @@ export default defineConfig({
         ],
       },
       workbox: {
+        cacheId: 'tasksandnotes',
         globPatterns: ['**/*.{js,css,html,png,svg,json,webmanifest}'],
-        cleanupOutdatedCaches: true,
+        // Workbox's generic cleanup also matches other apps' precaches at this origin/scope.
+        // PrecacheController still removes outdated entries inside this app's current cache.
+        cleanupOutdatedCaches: false,
         navigateFallback: 'index.html',
         maximumFileSizeToCacheInBytes: 2000000,
       },
