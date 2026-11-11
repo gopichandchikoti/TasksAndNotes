@@ -8,3 +8,5 @@ test-results
 package-lock.json
 # Shared instruction bytes are synchronized with the universal standard.
 AGENTS.md
+
+.github/pull_request_template.md
