@@ -3,6 +3,7 @@
 A local-first workspace for the things you need to do and the thoughts you want to keep. React,
 TypeScript and IndexedDB; no account or backend required. Version: **1.0.0** (`package.json` is authoritative).
 Desktop and mobile browsers; installable as a PWA. CI is configured but has not been run on GitHub.
+**Live demo:** https://tasks-and-notes.vercel.app
 
 ![Actual 320px browser test, with synthetic test content](docs/screenshots/mobile.png)
 
